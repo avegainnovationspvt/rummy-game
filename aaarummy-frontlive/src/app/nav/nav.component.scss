@@ -1,0 +1,317 @@
+
+input.ng-invalid.ng-touched
+{
+border: 2px solid red;
+}
+input.ng-valid.ng-touched
+{
+border: 2px solid green;
+}
+.error
+{
+color: red;
+}
+
+
+.edit{
+  margin-left: 180px;
+  margin-bottom: 20px;
+}
+
+
+.cashnav{
+  padding-right: 40px;
+}
+.profilenav{
+  padding-right: 40px;
+}
+
+.uk-navbar-nav{
+  list-style: none;
+}
+// .uk-position-right{
+//   // top:5px;
+//   padding-right: 350px;
+//    top:20px;
+// }
+.uk-position-left{
+top: 20px;
+bottom: 0;
+left: 30px;
+}
+.uk-margin-left{
+  padding-left: 60px
+}
+.none{
+  list-style: none;
+}
+  
+
+.left-img{
+  border-radius: 50px;
+  height: 60px;;
+  width: 60px;
+  object-fit: cover;
+  object-position: center right;
+}
+// element.style {
+//   color: white; 
+//   // padding-top: 40px;
+// }
+.addnav a{
+  padding-right: 30px;
+}
+.add{
+  padding-left: 10px;
+}
+.headnav{
+  font-size:15px;
+}
+.headnav1{
+   font-size: 25px;
+   padding-top: 5px
+}
+
+.uk-margin a{
+   text-align:center;
+}
+.navlogo{
+  margin-top: -35px;
+  width:15vw;
+  height:15vh;
+}
+.profile:hover{
+  cursor: pointer;
+}
+.navh{
+  height:13vh;
+}
+.ulc{
+  padding-left: 30%;
+}
+.ulcs{
+  padding-bottom: 50px;
+  padding-left: 40%;
+}
+.ug{
+  background-color: #2ecc72;
+}
+.modaladd h2{
+  color:white;
+  padding-left: 150px;
+  font-family: -webkit-pictograph;
+
+}
+.modaladd a{
+  color:white;
+}
+.ug th{
+  color: black;
+}
+.closebtn{
+  color: white;
+  color: red;
+  padding-top: 20px;
+  padding-right: 40px;
+
+}
+
+.modalprof{
+  padding-left: 20px;
+  font-family:-webkit-body;
+}
+
+.uk-divider-small{
+  padding-left: 20px;
+}
+.divline{
+  margin-left: 30px;
+  margin-right: 30px
+}
+.uk-margin-small-right{
+  margin-top: 80px;
+ margin-right: 30px;
+ 
+  
+}
+.addch{
+  height: auto;
+  width: 70vw;
+  background-color:#72860D   ;
+  border-radius: 5px;
+  
+}
+
+
+
+
+.adcash-box {
+  transition: box-shadow .3s;
+  // width: 85%;
+  width: 96%;
+  height: 488px;
+  margin: 50px;
+  border-radius:50px;
+  border: 1px solid #ccc;
+  background: #fff;
+  float: left;
+  background-color: #0A541A 
+  
+}
+
+
+
+.uk-card-large{
+  margin-top: 0;
+  margin-left:20px;
+  background-color: #2A3730  ;
+  height: 373px;
+    width: 462px;
+}
+.uk-card-large h4{
+  color: white;
+}
+
+.uk-card-small h4{
+  color: white;
+}
+
+
+.uk-bu{
+  border-radius: 10px;
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px
+
+}
+.uk-bu1{
+  margin-top: 28px;
+    border-radius: 17px;
+    margin-left: 17px;
+    height: 52px;
+}
+.ad-box h5{
+  margin-left: 30px;
+    font-family: webkit-body;
+    margin-top: 5px;
+    font-size: 2rem;
+    color: red;
+}
+.uk-card-small{
+  margin-top: 0;
+  margin-left: 101px;
+  height: 376px;
+  width: 220px; 
+  background-color:#2A3730;  
+
+} 
+
+.adcash-box1{
+  border: 1px solid;
+  background-color: #22342A;
+  height:300px;
+  width: 400px
+}
+
+.adcash-box2{
+  border: 1px solid;
+  background-color: #22342A;
+  height:200px;
+  width: 300px;
+  float:left;
+  
+}
+.adcash-box:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+.uk-margin-auto-vertical {
+  height: 82vh;
+  width: 60vw;
+border-radius: 50px;
+  background-color: #2ecc72;
+}
+.uk-cls{ 
+  margin-left: 100px;
+
+}
+.buton{
+  margin-left: 500px;
+}
+.ad-box{
+  border: 1px solid;
+    height: 46px;
+    width: 100%;
+    border-radius: 49px 52px 0 0;
+    background-color: #CEE013  ;
+    color: white;
+    margin-top: 2px;
+    margin-left: 0px;
+}
+.confbut{
+  background-color: #A5B110  ;
+  color: white;
+  border-radius: 50px;
+  height: 40px;
+    width: 30%;
+    margin-left: 200px;
+    font-family: webkit-body;
+
+}
+.conbut1{
+  height: 40px;
+  width: 200px;
+margin-left: 91px;
+border-radius: 10px;
+background-color: white;
+color: red;
+}
+.borbox1{
+  margin-top: 20px
+}
+.borbx{
+  color: white;
+  // font-size: 2rem;
+  border: 1px solid brown;
+  height: 70px;
+
+  margin-top: 10px;
+  width: 130px;
+  margin-left: 20px;
+  // margin-left: 10px;
+  
+  background-color: brown;
+  // text-align: center;
+
+  border-radius: 5px;
+}
+.border-rounded {
+  border-radius: 5px;
+}
+
+.borbx p{
+  padding-left: 30x;
+}
+
+.box {
+  transition: box-shadow .3s;
+  width: 180px;
+  height: 220px;
+  margin: 20px;
+  border-radius:10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  float: left;
+  text-align: center;
+  
+}
+.uk-button-small{
+  margin-top: 10px;
+}
+.box:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+.uk-button-small{
+  background-color: #72860D;
+  color: white;
+}
