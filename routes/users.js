@@ -7,6 +7,8 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/secret');
 const User = require('../models/user');
+//  const http = require("https");
+
 
 // Post Route for register the user
 router.post('/register', (req, res, next) => {
@@ -15,7 +17,9 @@ router.post('/register', (req, res, next) => {
 		email: req.body.email,
 		contact: req.body.contact,
 		username: req.body.username,
-		password: req.body.password
+		password: req.body.password, 
+		
+
 	});
 
 
@@ -25,29 +29,56 @@ router.post('/register', (req, res, next) => {
 		} else {
 			res.json({success: true, msg:'User registered'});
 		}
+
+
 	});
+	
+
+
 });
 
+// update data 
+router.post('/nav/:id' , (req, res) =>{
+	// console.log(req.params)
+	
 
-router.post('/nav',(req,res,next) => {
-	console.log(res)
-	let newUser= new User({
-		AdharNumber:req.AdharNumber,
-		Pan:req.Pan,
-		BankAccount:req.body.BankAccount,
-	});
-	User.addUser(newUser,(err, user)=>{
-		if(err){
-			res.json({success:false})
-		}else{
-			res.json({success:true})
+			User.updateOne({_id : req.params.id},{'$set' : req.body} ,{multi : true})
+	  .then(res => {
+		console.log('res',res)
+		res.status(200).json({'User': 'user in updated successfully'});
+	  })
+	  .catch(err => {
+		console.log('errr',err)
+	  res.status(400).json("unable to save to database");
+	  });
+
+}	);
+
+
+router.post('/otp/:_Id', (req, res) => {
+	console.log(req.params);
+			
+		let data = req.body || {},
+		opts = {
+			new: true
 		}
-	})
 
-});
+	User.findByIdAndUpdate({ _id: req.params._Id }, {'$set' : data}, opts)
+		.then(user => {
+			res.send(200).json({'User': 'user in updated successfully'});
+		})
+		.catch(err => {
+			res.send(500).json({'User': 'user in updated successfully'});
+		})
+
+})
+
+	
+
 
 
  
+
 
 
 // Post Route for authenticating the user
@@ -75,7 +106,10 @@ router.post('/authenticate', (req, res, next) => {
 						id: user._id,
 						name: user.name,
 						username: user.username,
-						email: user.email
+						email: user.email,
+						// AdharNumber:user.AdharNumber,
+						// Pan:user.Pan,
+						// BankAccount:user.BankAccount
 					}
 				});
 			} else {
@@ -89,9 +123,20 @@ router.post('/authenticate', (req, res, next) => {
 // To protect the route pass the second parameter using passport
 router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
 	res.json({user: req.user});
+
+	 router.get('/otp')
 });
 
+
+
+
+
+
+
+
+
 module.exports = router;
+
 
 
 

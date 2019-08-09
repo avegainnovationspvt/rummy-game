@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,9 +9,12 @@ import { LoginComponent } from './login/login.component';
 import { MiddlepartComponent } from './middlepart/middlepart.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
+import { OtpComponent } from './otp/otp.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
+  {path:'middlepart', component: MiddlepartComponent},
+  {path:'otp', component:OtpComponent},
   { path: 'login', component: LoginComponent},
   { path: 'game', component: GamemidComponent},
   { path: 'forgot-password', component: ForpasComponent},
@@ -30,3 +33,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
+  

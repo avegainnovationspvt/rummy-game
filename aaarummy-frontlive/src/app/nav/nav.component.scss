@@ -136,37 +136,52 @@ left: 30px;
 }
 .addch{
   height: auto;
-  width: 70vw;
-  background-color:#72860D   ;
-  border-radius: 5px;
+  width: 65vw;
+  background-color: #043415e8;
+  border-radius: 47px;
   
 }
 
 
-
-
-.adcash-box {
-  transition: box-shadow .3s;
-  // width: 85%;
-  width: 96%;
-  height: 488px;
-  margin: 50px;
-  border-radius:50px;
-  border: 1px solid #ccc;
-  background: #fff;
-  float: left;
-  background-color: #0A541A 
-  
+.addch h2{
+  color: white;
+  margin-left: 45%;
+  font-family: -webkit-body;
 }
+.plycls{
+  color: brown;
+    position: absolute;
+    z-index: 1010;
+    top: 25px;
+    right: 44px;
+    padding: 14px;
+
+}
+
+// .adcash-box {
+//   transition: box-shadow .3s;
+//   // width: 85%;
+//   width: 96%;
+//   height: 488px;
+//   margin: 50px;
+//   border-radius:50px;
+//   border: 1px solid #ccc;
+//   background: #fff;
+//   float: left;
+//   background-color: #0A541A 
+  
+// }
 
 
 
 .uk-card-large{
   margin-top: 0;
-  margin-left:20px;
-  background-color: #2A3730  ;
-  height: 373px;
-    width: 462px;
+  margin-left: 20px;
+  background-color: #9BECAA;
+  height: 386px;
+  border-radius: 27px;
+  width: 488px;
+
 }
 .uk-card-large h4{
   color: white;
@@ -179,30 +194,51 @@ left: 30px;
 
 .uk-bu{
   border-radius: 10px;
-  color: white;
+  // color: white;
   margin-top: 10px;
   margin-left: 10px
 
 }
 .uk-bu1{
-  margin-top: 28px;
-    border-radius: 17px;
-    margin-left: 17px;
-    height: 52px;
+  margin-top: 7px;
+  border-radius: 0px;
+  margin-left: 42px;
+  height: 57px;
+  width: 121px;
+  // background-color: #B6C109;  
+}
+.uk-bu3{
+  border-radius: 10px;
+  // color: white;
+  margin-top: 10px;
+  margin-left: 15px
+
 }
 .ad-box h5{
-  margin-left: 30px;
+  margin-left:297px;
     font-family: webkit-body;
-    margin-top: 5px;
+    margin-top: 7px;
     font-size: 2rem;
     color: red;
 }
+
+.ukcls{
+  position: absolute;
+  z-index: 1010;
+  top: 10px;
+  right: 41px;
+  padding: 22px;
+  color: red;
+}
 .uk-card-small{
   margin-top: 0;
-  margin-left: 101px;
+  margin-left: 125px;
+
+
   height: 376px;
   width: 220px; 
-  background-color:#2A3730;  
+  background-color: #9BECAA;  
+  border-radius: 27px;
 
 } 
 
@@ -221,15 +257,15 @@ left: 30px;
   float:left;
   
 }
-.adcash-box:hover {
-  box-shadow: 0 0 11px rgba(33,33,33,.2); 
-}
+// .adcash-box:hover {  
+//   box-shadow: 0 0 11px rgba(33,33,33,.2); 
+// }
 
 .uk-margin-auto-vertical {
-  height: 82vh;
-  width: 60vw;
-border-radius: 50px;
-  background-color: #2ecc72;
+  height: 84vh;
+  width: 58vw;
+  border-radius: 50px;
+  // background-color: white;
 }
 .uk-cls{ 
   margin-left: 100px;
@@ -238,25 +274,44 @@ border-radius: 50px;
 .buton{
   margin-left: 500px;
 }
-.ad-box{
-  border: 1px solid;
-    height: 46px;
-    width: 100%;
-    border-radius: 49px 52px 0 0;
-    background-color: #CEE013  ;
-    color: white;
-    margin-top: 2px;
-    margin-left: 0px;
-}
+// .ad-box{
+//   border: 1px solid;
+//   height:94px;
+//   width: 106%;
+//   border-radius: 43px 52px 0 0;
+//   // background-color: ;
+//   color: white;
+//   margin-top: -30px;
+//   margin-left: -26px;
+// }
 .confbut{
-  background-color: #A5B110  ;
-  color: white;
+  // background-color: #A5B110  ;
+  // color: white;
+ border: 2px solid;
   border-radius: 50px;
+  // border-block-color: black;
   height: 40px;
     width: 30%;
     margin-left: 200px;
     font-family: webkit-body;
 
+}
+.confbut3{
+  // background-color: #A5B110  ;
+  // color: white;
+  border: 2px solid;
+  border-radius: 50px;
+  height: 40px;
+  width: 20%;
+  margin-left: 150px;
+  font-family: webkit-body;
+
+}
+.confbut3:hover{
+background-color: #2ecc72
+}
+.confbut:hover{
+  background-color: #2ecc72;
 }
 .conbut1{
   height: 40px;
@@ -264,7 +319,7 @@ border-radius: 50px;
 margin-left: 91px;
 border-radius: 10px;
 background-color: white;
-color: red;
+// color: red;
 }
 .borbox1{
   margin-top: 20px
@@ -291,11 +346,12 @@ color: red;
 
 .borbx p{
   padding-left: 30x;
+
 }
 
 .box {
   transition: box-shadow .3s;
-  width: 180px;
+  width: 169px;
   height: 220px;
   margin: 20px;
   border-radius:10px;
@@ -312,6 +368,9 @@ color: red;
   box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
 .uk-button-small{
-  background-color: #72860D;
-  color: white;
+  // background-color: #72860D;
+  // color: white;
+
+
 }
+

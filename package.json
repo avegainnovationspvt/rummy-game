@@ -8,13 +8,19 @@
     "start": "node app"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
+    "async": "^3.1.0",
     "bcryptjs": "*",
-    "cors": "*",
-    "jsonwebtoken": "*",
     "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "morgan": "^1.9.1",
+    "msg91": "0.0.6",
     "passport": "*",
+    "passport-facebook": "^3.0.0",
+    "passport-facebook-token": "^3.3.0",
+    "passport-google-oauth": "^2.0.0",
     "passport-jwt": "*"
   },
   "author": "Sudeepta Mitra",

@@ -18,6 +18,8 @@ import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
+import { ReactiveFormsModule } from '@angular/forms';
+import { OtpComponent } from './otp/otp.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +31,17 @@ import { AuthGuard } from './guards/auth.guard';
     GamemidComponent,
     HomeComponent,
     ForpasComponent,
-    LoginComponent
+    LoginComponent,
+    OtpComponent,
+   
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FlashMessagesModule.forRoot()
   ],
   providers: [ValidateService, AuthService, AuthGuard],

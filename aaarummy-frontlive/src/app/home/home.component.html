@@ -18,12 +18,63 @@
                         
                         <ul class="uk-modal-body uk-switcher uk-margin">
                           <li>
-                            <form (submit)="onRegisterSubmit()">
+                            <form (submit)="onRegisterSubmit()" >
                               <fieldset class="uk-fieldset">
-                                <div class="uk-margin">
-                                  <input class="uk-input ipt1" type="text" [(ngModel)]="username" name="username" placeholder="Enter username">
-                                  <input class="uk-input ipt2" type="text" [(ngModel)]="contact" name="contact" placeholder="Your mobile number">
-                                  <input class="uk-input ipt3" type="password" [(ngModel)]="password" name="password" placeholder="Secure password">
+                                  
+                                <div class="uk-margin"  [formGroup]="userAddressValidations">
+
+                                    <input class="uk-input ipt1" type="text" placeholder="Enter username"  [(ngModel)]="username" name="username" formControlName="username">
+                                    <p *ngIf="userAddressValidations.get('username').hasError('required')">
+                                        <!-- <span style="margin-left: 82px; color: red;">First Name is Required!</span> -->
+                                    </p>
+                                    <p *ngIf="userAddressValidations.get('username').hasError('minlength')">
+                                        <span style="margin-left: 65px; color: red;"> Username should be atleast 4 characters long!</span>
+                                    </p>
+                                
+                                    <p *ngIf="userAddressValidations.get('username').hasError('maxlength')">
+                                        <span style="margin-left: 65px; color: red;">username can be atmax n characters long!</span>
+                                    </p>
+                                
+                                    <p *ngIf="userAddressValidations.get('username').hasError('pattern')">
+                                        <span style="margin-left: 65px; color: red;">  username must follow this pattern!</span>
+                                    </p>
+                                
+ 
+<!--                 
+                                  <input class="uk-input ipt1" type="text" formControlName="username" [(ngModel)]="username" name="username" maxlength="20" placeholder="Enter username"> -->
+                      
+                                  
+<!--                                 
+                                <div class="uk-margin"  [formGroup]="userAddressValidations"> -->
+                                    <input class="uk-input ipt2" formControlName="mobileNumber" type="number" [(ngModel)]="contact" name="contact" maxlength="10" placeholder="Your mobile number" >
+                                    <P  *ngIf="userAddressValidations.get('mobileNumber').hasError('required')">
+                                       
+                                        <!-- <span style="margin-left: 82px; color: red;">Please fill out this field..</span>    -->
+                                    </P>
+                                    <P *ngIf="userAddressValidations.get('mobileNumber').hasError('pattern')">
+                                     <span style="margin-left: 82px; color: red;">It is not a valid mobile number.</span> 
+                                    </P>
+
+                                  <!-- <input class="uk-input ipt2" type="number" [(ngModel)]="contact" name="contact" placeholder="Your mobile number" required  max="9"  pattern="[0-9]{5}[-][0-9]{7}[-][0-9]{1}"> -->
+                                 
+                                <!-- <div class="uk-margin" [formGroup]="userAddressValidations"> -->
+    
+                                  <input class="uk-input ipt3" type="password" formControlName="password"  [(ngModel)]="password" name="password"   placeholder="Secure password" >
+                                  <p *ngIf="userAddressValidations.get('password').hasError('required')">
+                                      <!-- <span style="margin-left: 82px; color: red;">Password is Required!</span> -->
+                                  </p>
+                                 
+                                  <p *ngIf="userAddressValidations.get('password').hasError('minlength')">
+                                      <span style="margin-left: 82px; color: red;"> password should be atleast 6 characters long!</span>
+                                  </p>
+                                  <p *ngIf="userAddressValidations.get('password').hasError('pattern')">
+                                      <span style="margin-left: 82px; color: red;">   First Name must follow this pattern!</span>
+                                  </p>
+                              
+                               
+                               
+                               
+                                </div>
                                   <p class="p1">By registering you are agreeing to our Terms & Conditions</p>
                                   <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom btn3" type="submit"><span class="lck2" uk-icon="lock"></span>Register and Play</button>
                                   <p class="p2">Or login in one click</p>
@@ -31,7 +82,9 @@
                                     <a class="uk-button uk-button-default lnk1" href="#"><span class="fb" uk-icon="facebook"></span>Facebook</a>
                                     <a class="uk-button uk-button-default lnk2" href="#"><span class="gl" uk-icon="google"></span>Google</a>
                                   </p>
-                                </div>
+                                
+
+                                
                               </fieldset>
                             </form>
                           </li>
@@ -450,3 +503,10 @@
     <h3 class="uk-card-title uk-flex uk-flex-center footendh">&copy; AAARummyculture.All Right Reserved</h3>
   </div>
 </div>
+<script>
+  var app = angular.module('myApp', []);
+
+  app.controller('mainCtrl', function($scope) {
+    $scope.phoneNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
+  });
+</script>

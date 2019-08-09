@@ -1,0 +1,30 @@
+<div class="forgotpass">
+  <div class="uk-card uk-card-default uk-width-1-2@m uk-width-1-1@s forpass">
+      <div class="uk-card-header">
+          <div class="uk-grid-small uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                  <h4 class="uk-card-title titl"> Mobile Number Verification </h4>
+              </div>
+          </div>
+      </div>
+      <div class="uk-card-body">
+        <form (submit)="onverify()">
+          <fieldset class="uk-fieldset">
+              <p> OTP sent ur mobile number </p>
+              <div class="uk-margin inp4">
+                <br>
+               
+
+                <input class="uk-input ip4" type="text" placeholder=" enter the otp">
+                <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" type="submit">verify  ur otp</button>
+              </div>
+          </fieldset>
+        </form>
+      </div>
+      <!-- <div class="uk-card-footer"> -->
+          <!-- <span>we will send u a link</span> -->
+      <!-- </div> -->
+  </div>
+  </div>
+  
+<router-outlet></router-outlet>

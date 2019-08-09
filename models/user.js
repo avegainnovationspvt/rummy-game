@@ -6,29 +6,56 @@ const config = require('../config/secret');
 const UserSchema = mongoose.Schema({
 	username: {
 		type: String,
-		required: true
+		unique	: true
 	},
 	contact: {
 		type: String,
-		required: true
+		unique: true
 	},
 	password: {
 		type: String,
-		required: true
-	},
-	// AdharNumber:{
-	// 	type:String,
-	// 	required:true
-	// },
-	// Pan:{
-	// 	type:String,
-	// 	required:true
-	// },
-	// BankAccount:{
-	// 	type:String,
-	// 	required:true
-	// }
+		unique: true
+	}, 
 	
+	
+	facebook: String,
+tokens: Array,
+password:String,
+profile:{
+
+  name:{ type:String,default:'' },
+  picture:{ type:String,default:''}
+},
+google: String,
+tokens: Array,
+email:String,
+password:String,
+profile:{
+
+  name:{ type:String,default:'' },
+  picture:{ type:String,default:''}
+},
+verified: {
+	type: Number,
+	unique: true
+},
+
+
+
+AdharNumber:{
+	type:String,
+	unique:true
+},
+Pan:{
+	type:String,
+	unique:true
+},
+BankAccount:{
+	type:String,
+	unique:true
+},
+
+
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
@@ -45,28 +72,8 @@ module.exports.getUserByUsername = function(username, callback){
 }
 
 
-//getting adhar number'
-
-// module.exports.getUserByAdharNumber = function(AdharNumber, callback){
-// 	const query = {AdharNumber: AdharNumber}
-// 	User.findOne(query, callback);
-// }
-
-// module.exports.getUserByPan = function(Pan, callback){
-// 	const query = {Pan:Pan}
-// 	User.findOne(query, callback);
-// }
-
-// module.exports.getUserByBankAccount = function(BankAccount, callback){
-// 	const query = {BankAccount: BankAccount}
-// 	User.findOne(query, callback);
-// }
-
-//end data
 
 
-//genSalt is a function which generates a random key which is used to hashed the password
-//Function for inserting the user in the database
 module.exports.addUser = function(newUser, callback){
 	bcrypt.genSalt(10, (err, salt) => {
 		bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -77,10 +84,13 @@ module.exports.addUser = function(newUser, callback){
 	});
 }
 
-//Function for comparing the password
+// Function for comparing the password
 module.exports.comparePassword =  function(candidatePassword, hash, callback){
 	bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
-		if(err) throw err;
+		if(err);
 		callback(null, isMatch);
 	});
 }
+// // 
+
+

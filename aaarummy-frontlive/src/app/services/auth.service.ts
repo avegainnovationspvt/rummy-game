@@ -8,7 +8,8 @@ export interface UserPostResponse {
   msg: string;
   token: any;
   user: object;
-  // Edit:Object;
+  Edit:Object;
+  verify:object
 }
 
 @Injectable({
@@ -19,15 +20,18 @@ export class AuthService {
   authToken: any;
   user: any;
   Edit: any;
+  verify:any;
 
   constructor(private http: HttpClient) { }
 
+  //update details
 
-  editUser(Edit): Observable <UserPostResponse> {
+  EditUser(Edit , id): Observable <UserPostResponse> {
     const headers = new HttpHeaders();
     headers.append('content-Type', 'application/json');
-    return this.http.post<UserPostResponse>('http://localhost:3000/users/nav', Edit, {headers});
+    return this.http.post<UserPostResponse>(`http://localhost:3000/users/nav/${id}`, Edit, {headers});
   }
+
 
   // Backend API where we can make that post request to register
   registerUser(user): Observable<UserPostResponse> {
@@ -37,7 +41,11 @@ export class AuthService {
   }
 
 
-
+  VerifyUser(verify, id): Observable<UserPostResponse> {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post<UserPostResponse>(`http://localhost:3000/users/otp/${id}`, verify, {headers});
+  }
   
 
   // Backend API where we can make that post request to authenticate
@@ -55,6 +63,20 @@ export class AuthService {
     headers = headers.append('Content-Type', 'application/json');
     return this.http.get<UserPostResponse>('http://localhost:3000/users/profile', {headers});
   }
+
+  getProfile (): Observable<UserPostResponse> {
+    let headers = new HttpHeaders();
+    this.loadToken();
+    headers = headers.append('Authorization', this.authToken);
+    headers = headers.append('Content-Type', 'application/json');
+    return this.http.get<UserPostResponse>('http://localhost:3000/users/profile', {headers});
+  }
+
+   
+
+
+
+
 
   // Store the user data in the local storage along with the JWT-token
   storeUserData(token, user) {
